@@ -91,6 +91,25 @@ object TaskRepository {
     // Follow instructions in mdbook to implement:
     // - fun find(id: Int): Task?
     // - fun update(task: Task)
+    /**
+     * Finds a task by its ID (Week 7 required method)
+     * @param id Integer ID of the task to find
+     * @return Matching Task or null if not found
+     */
+    fun find(id: Int): Task? = tasks.find { it.id == id }
+
+    /**
+     * Updates an existing task's title (Week 7 required method)
+     * Persists changes to CSV file after update
+     * @param task Updated Task object with existing ID and new title
+     */
+    fun update(task: Task) {
+        val existingTask = find(task.id)
+        existingTask?.let {
+            it.title = task.title
+            persist()
+        }
+    }
 
     private fun persist() {
         file.writeText("id,title\n" + tasks.joinToString("\n") { "${it.id},${it.title}" })

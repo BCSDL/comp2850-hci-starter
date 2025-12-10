@@ -1,0 +1,9 @@
+id,title,story_ref,story_type,need,type,severity,inclusion_risk,evidence,notes,candidate_fix
+1,Unclear Enter key submission,stories.md#S1,Job story,Keyboard feedback,Usability,Medium,Keyboard,"Participant A notes (2025-11-08, 14:31)","Users unsure if Enter submits task form; add ""Press Enter to save"" hint",false
+2,Delete button not focusable,stories.md#S2,Job story,Keyboard access,Accessibility,High,"Keyboard,Screen reader","Participant A notes (2025-11-08, 14:33); WCAG 2.1.1","Delete buttons missing from Tab order; fix focus management",true
+3,No SR action confirmation,stories.md#S3,Job story,Screen reader feedback,Accessibility,High,Screen reader,"Participant B notes (2025-11-10, 10:16); WCAG 4.1.3","Screen readers don't announce task add/delete success; add aria-live region",true
+4,No inline task editing,stories.md#S4,Job story,Efficient editing,Usability,Medium,"Cognitive,Motor","Participant B notes (2025-11-10, 10:18)","Users need to edit tasks without new pages; implement inline edit",false
+5,Unclear error messages,stories.md#S5,Job story,Error clarity,Accessibility,Medium,Cognitive,"Participant B notes (2025-11-10, 10:20); WCAG 3.3.1","Generic ""error"" messages; replace with specific guidance (e.g., ""Task name required"")",false
+6,Poor task list scanability,stories.md#S6,Job story,Visual hierarchy,Usability,Low,"Low vision,Cognitive","Participant A notes (2025-11-08, 14:35)","Lack of spacing/color区分; add alternating row colors and bold headers",false
+7,No completion progress indicator,,Pain point,Motivational feedback,Usability,Low,Cognitive,"Derived from S6 (scanability needs)","Users can't quickly gauge progress; add ""X of Y tasks complete"" summary",false
+8,No-JS edit loses context,,Pain point,No-JS parity,Accessibility,High,"Keyboard,Screen reader","Internal testing; PRG redirect issue","No-JS edit redirects without preserving form data; store in sessionStorage",false
