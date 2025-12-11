@@ -1,57 +1,70 @@
-# Informed Consent Protocol — Week 6 Peer Interviews
+# Consent & Protocol (Peers only, no PII)
 
 **Module**: COMP2850 Human-Computer Interaction  
-**Activity**: Low-risk needs-finding interviews (peer-based)  
-**Date Range**: November 6–13, 2025  
-**Researcher**: [Yming Xu 201751643]  
+**Activity**: Low-risk needs-finding interviews and usability testing with peers  
+**Date**: [YYYY-MM-DD]  
+**Researcher**: [Yiming Xu 201751643]  
 
----
 
-## Purpose Statement  
-We are conducting short peer interviews (5–10 minutes) to understand how people interact with task management tools, identify usability pain points, and gather insights for improving accessibility. This research supports coursework for Weeks 6–11 of the COMP2850 module.  
+## Purpose  
+We are conducting short peer interviews and usability tests (5-10 minutes) to understand how people interact with task management tools and identify accessibility improvements. This activity is part of HCI coursework (Weeks 6-11) to inform interface design and inclusive feature development.  
 
-## What Participants Will Do  
-You will be asked 3–5 questions about your experience with task managers (e.g., "Describe a time you struggled to organize tasks" or "What features help you stay on track?"). I will take brief written notes during the discussion. **No audio, video, or screen recordings will be made**.  
 
-## Data Collected (and NOT Collected)  
-- **Collected**:  
-  - Pseudonymised notes (e.g., "Participant B mentioned...")  
-  - Timestamps of the interview  
-  - Contextual tags (e.g., "Uses keyboard-only navigation", "Prefers dark mode")  
+## What You'll Do  
+- You will be asked 3-5 questions about your experience with task managers (e.g., "Tell me about a time you struggled to complete a task").  
+- You may be asked to perform simple tasks in a prototype (e.g., adding or editing a task).  
+- Think-aloud is optional (you can share your thoughts as you interact, but it’s not required).  
+- You can stop at any time without explanation.  
 
-- **NOT Collected** (no PII):  
-  - Names, student IDs, or email addresses  
-  - Device identifiers or personal data  
-  - Any information that could identify you individually  
 
-## Data Storage Location and Duration  
-- **Storage**: Notes will be stored in a private local Git repository on my laptop. Only I, my lab partner, and module teaching staff (for marking purposes) will have access.  
-- **Duration**: Data will be retained until the end of Semester 1 (January 2026), then either deleted or fully anonymised for portfolio use.  
+## Data Collected  
+### What will be collected:  
+- Pseudonymised notes (e.g., "Participant A noted confusion with edit buttons").  
+- Timestamps of interactions (e.g., "Took 20 seconds to submit a task").  
+- Error counts (e.g., "1 failed submission due to empty input").  
+- Contextual tags (e.g., "Uses keyboard only", "Prefers screen reader").  
+- Cropped screenshots of the interface (no personal info visible).  
 
-## Participant Rights (UK GDPR / Data Protection Act 2018)  
-- **Right to withdraw**: You may stop the interview at any time without explanation.  
-- **Right to access**: You can request to review your pseudonymised notes at any time.  
-- **Right to erasure**: You can ask to delete all data related to you; I will confirm deletion within 48 hours.  
-- **Right to complain**: Contact the University Data Protection Officer at dpo@leeds.ac.uk with concerns.  
+### What will NOT be collected:  
+- Names, student IDs, emails, or usernames.  
+- Audio/video recordings (no recordings of any kind).  
+- Device details, IP addresses, or other personally identifiable information (PII).  
 
-## Consent Confirmation Checklist  
+
+## Data Storage  
+- Data will be stored locally on my laptop in a private Git repository.  
+- Access is limited to me, my lab partner, and module teaching staff (for marking purposes only).  
+- Data will be retained until the end of Semester 1 (January 2025), then deleted or fully anonymised for portfolio submission.  
+
+
+## Your Rights (UK GDPR / Data Protection Act 2018)  
+- **Right to withdraw**: You can stop participation at any time with no penalty.  
+- **Right to access**: You can request to view your anonymised data (e.g., notes about your session).  
+- **Right to erasure**: You can ask to delete your data by emailing me with the interview date and your pseudonym. I will confirm deletion within 48 hours.  
+- **Right to complain**: Contact the University Data Protection Officer with concerns: dpo@leeds.ac.uk.  
+
+
+## Consent Confirmation  
 Before starting, I will confirm:  
-- [ ] You understand the purpose of the interview  
-- [ ] You know what data will (and will not) be collected  
-- [ ] You are aware of your right to withdraw at any time  
-- [ ] You consent to participate  
+- [ ] You understand the purpose of the activity.  
+- [ ] You know what data will be collected (and what won’t be).  
+- [ ] You are aware you can stop at any time.  
+- [ ] You consent to participate.  
 
-**Confirmation**: Verbal consent will be noted with the date, time, and assigned pseudonym (e.g., "Participant C, 2025-11-08 14:30, consent given").  
+Verbal consent is sufficient. I will record:  
+- Date/time: [YYYY-MM-DD HH:MM]  
+- Pseudonym assigned: [e.g., "Participant A"]  
+
 
 ## Opt-Out Process  
-If you wish to withdraw after the interview:  
-1. Email me at [sc23yx2@leeds.ac.uk]  
-2. Include the interview date and your pseudonym (if remembered)  
-3. I will delete all related notes within 48 hours and confirm via email.  
+If you change your mind after the session:  
+1. Email me at [sc23yx2@leeds.ac.uk].  
+2. Include the interview date and your pseudonym (if remembered).  
+3. I will delete all notes/data linked to your session within 48 hours.  
+4. I will send confirmation of deletion via email.  
+
 
 ## Contact Information  
-- **Researcher**: [Yiming Xu], [sc23yx2@leeds.ac.uk]  
-- **Module Lead**: Dr. [Module Leader's Name], [module-email@leeds.ac.uk]  
-- **University Ethics**: Research Ethics Team, ethics@leeds.ac.uk  
-
----
+- Researcher: [Yiming Xu], [sc23yx2@leeds.ac.uk]  
+- Module Lead: Dr. [Module Leader Name], [module-email@leeds.ac.uk]  
+- University Ethics: Research Ethics Team, ethics@leeds.ac.uk  
