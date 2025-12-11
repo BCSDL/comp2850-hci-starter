@@ -1,0 +1,8 @@
+id,week,priority,category,description,wcag,status,evidence,mitigation,candidate_fix
+wk8-01,8,high,tech_debt,"Template duplication between full page (/tasks) and fragment (/tasks/fragment)",,open,"wk08/docs/prototyping-constraints.md L19","Create shared partials (_list.peb, _pager.peb) for both routes",true
+wk8-02,8,high,a11y,"Focus management fails after task deletion (no focusable target)",2.4.3,open,"wk08/lab-w8/scripts/nojs-check.md Test 6","Set focus to task list container or 'Add Task' input post-deletion",true
+wk8-03,8,medium,parity,"No-JS mode lacks success message after task deletion",4.1.3,open,"wk08/lab-w8/scripts/nojs-check.md Test 6","Add server-rendered success banner in /tasks route using PRG pattern",true
+wk8-04,8,medium,a11y,"Pagination links missing aria-current in no-JS mode",4.1.2,open,"wk08/lab-w8/scripts/nojs-check.md Test 4","Add aria-current=""page"" to active pagination link server-side",false
+wk8-05,8,low,ux,"Filter input doesn't retain value on pagination in no-JS",,open,"wk08/lab-w8/scripts/nojs-check.md Test 4","Persist filter query in hidden form field for pagination links",false
+wk8-06,8,medium,parity,"Live region #status doesn't update in no-JS filter",4.1.3,open,"wk08/docs/prototyping-constraints.md L12; nojs-check.md Test 3","Render status message in #status element on server response",true
+wk8-07,8,low,performance,"Fragment response includes unused CSS classes",,open,"Network tab comparison (full vs fragment)","Minify fragment markup by removing redundant classes",false

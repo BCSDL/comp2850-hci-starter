@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Tasks</h1>
 
-{# Error Summary (Week 7: Enhanced for inline edit errors) #}
+{# Error Summary (Enhanced for accessibility) #}
 {% if error %}
 <div class="error-summary" id="error-summary" tabindex="-1" role="alert" aria-live="assertive">
   <h2>There is a problem</h2>
@@ -18,20 +18,19 @@
   </ul>
 </div>
 <script>
-  // Progressive enhancement: auto-focus error summary for screen readers
   if (document.getElementById('error-summary')) {
     document.getElementById('error-summary').focus();
   }
 </script>
 {% endif %}
 
-{# Add Task Form (Week 7: Maintained accessibility with ARIA) #}
+{# Add Task Form (Updated for Week 8 partial swapping) #}
 <section aria-labelledby="add-heading">
   <h2 id="add-heading">Add a new task</h2>
   <form action="/tasks" method="post"
         hx-post="/tasks"
-        hx-target="#task-list"
-        hx-swap="beforeend">
+        hx-target="#task-area"  {# Week 8: Target entire task area for pagination #}
+        hx-swap="innerHTML">    {# Week 8: Replace instead of appending #}
     <div>
       <label for="title">Task title</label>
       <input type="text" id="title" name="title" required
@@ -53,25 +52,30 @@
   </form>
 </section>
 
-{# Task List (Week 7: Conditional view/edit partials) #}
-<section aria-labelledby="list-heading">
-  <h2 id="list-heading">Current tasks ({{ tasks | length }})</h2>
-  <img src="/static/img/icon.png" width="16" height="16" alt="Task list icon">
-  <ul id="task-list" aria-describedby="result-count">
-    {% for task in tasks %}
-      {% if editingId and editingId == task.id %}
-        {# Edit mode: Include edit partial (Week 7 Activity 2) #}
-        {% include "tasks/partials/edit.peb" with {"task": task, "error": errorMessage} %}
-      {% else %}
-        {# View mode: Include view partial (Week 7 Activity 2) #}
-        {% include "tasks/partials/view.peb" with {"task": task} %}
-      {% endif %}
-    {% else %}
-      <li>No tasks yet. Add one above!</li>
-    {% endfor %}
-  </ul>
-  <p id="result-count" class="visually-hidden">
-    Showing {{ tasks | length }} task{{ tasks | length != 1 ? 's' : '' }}
-  </p>
-</section>
+{# Filter Form (Week 8: Added for filtering functionality) #}
+<form action="/tasks" method="get"
+      hx-get="/tasks/fragment"
+      hx-target="#task-area"
+      hx-trigger="keyup changed delay:300ms, submit from:closest(form)"
+      hx-push-url="true">
+  <label for="q">Filter tasks</label>
+  <input id="q" name="q" value="{{ query|default('') }}" type="search"
+         aria-describedby="q-hint">
+  <small id="q-hint">Type to filter; works without JavaScript.</small>
+  <button type="submit">Apply</button>
+</form>
+
+{# Task Area Container (Week 8: Wraps list and pagination) #}
+<div id="task-area">
+  <section aria-labelledby="list-heading">
+    <h2 id="list-heading">Current tasks ({{ tasks | length }})</h2>
+    <img src="/static/img/icon.png" width="16" height="16" alt="Task list icon">
+    
+    {# Task List (Week 8: Extracted to partial) #}
+    {% include "tasks/_list.peb" %}
+
+    {# Pagination (Week 8: Placeholder for pager partial) #}
+    {% include "tasks/_pager.peb" %}
+  </section>
+</div>
 {% endblock %}

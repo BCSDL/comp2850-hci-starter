@@ -1,0 +1,46 @@
+<nav aria-label="Pagination" class="pagination-container">
+  <ul class="pagination">
+    {# Previous page link - visible if current page > 1 #}
+    {% if page.hasPrevious %}
+      <li class="pagination-prev">
+        <a href="/tasks?q={{ query|default('') }}&page={{ page.previousPage }}"
+           hx-get="/tasks/fragment?q={{ query|default('') }}&page={{ page.previousPage }}"
+           hx-target="#task-area"
+           hx-push-url="true"
+           aria-label="Go to previous page">
+          Previous
+        </a>
+      </li>
+    {% else %}
+      {# Disabled state for screen readers when no previous page #}
+      <li class="pagination-prev" aria-disabled="true">
+        <span class="visually-hidden">No previous page</span>
+        <span class="disabled">Previous</span>
+      </li>
+    {% endif %}
+
+    {# Current page indicator #}
+    <li class="pagination-status" aria-current="page">
+      Page {{ page.currentPage }} of {{ page.totalPages }}
+    </li>
+
+    {# Next page link - visible if current page < total pages #}
+    {% if page.hasNext %}
+      <li class="pagination-next">
+        <a href="/tasks?q={{ query|default('') }}&page={{ page.nextPage }}"
+           hx-get="/tasks/fragment?q={{ query|default('') }}&page={{ page.nextPage }}"
+           hx-target="#task-area"
+           hx-push-url="true"
+           aria-label="Go to next page">
+          Next
+        </a>
+      </li>
+    {% else %}
+      {# Disabled state for screen readers when no next page #}
+      <li class="pagination-next" aria-disabled="true">
+        <span class="visually-hidden">No next page</span>
+        <span class="disabled">Next</span>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
