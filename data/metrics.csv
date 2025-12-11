@@ -1,0 +1,13 @@
+ts_iso,session_id,request_id,task_code,step,outcome,ms,http_status,js_mode
+2025-11-27T14:23:45Z,P1_7a9f,req_001,T1_filter,success,,1847,200,on
+2025-11-27T14:24:10Z,P1_7a9f,req_002,T2_edit,validation_error,blank_title,0,400,on
+2025-11-27T14:24:30Z,P1_7a9f,req_003,T2_edit,success,,1234,200,on
+2025-11-27T14:25:00Z,P1_7a9f,req_004,T3_add,success,,567,200,on
+2025-11-27T14:25:20Z,P1_7a9f,req_005,T4_delete,success,,210,200,on
+2025-11-27T14:30:15Z,P2_3c8d,req_006,T1_filter,success,,2100,200,off
+2025-11-27T14:31:00Z,P2_3c8d,req_007,T3_add,validation_error,max_length,0,400,off
+2025-11-27T14:31:20Z,P2_3c8d,req_008,T3_add,success,,3456,200,off
+2025-11-27T14:32:00Z,P2_3c8d,req_009,T4_delete,success,,198,200,off
+2025-11-27T14:35:00Z,P3_5e7g,req_010,T2_edit,fail,,0,500,on
+2025-11-27T14:36:10Z,P3_5e7g,req_011,T2_edit,success,,1560,200,on
+2025-11-27T14:37:30Z,P3_5e7g,req_012,T1_filter,success,,1980,200,on
