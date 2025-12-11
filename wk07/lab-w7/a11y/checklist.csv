@@ -1,9 +1,13 @@
 check,item,notes
-Keyboard,All actions are possible with keyboard only,
-Keyboard,Focus order logical; no traps; visible focus,
-Structure,Meaningful headings and landmarks,
-Forms,Labels associated; errors linked,
-Dynamic,Status messages announced,
-Dynamic,No unexpected focus shifts,
-Visual,Contrast AA; 200% zoom ok,
-
+Keyboard,All actions accessible via Tab/Enter/Space (2.1.1 Keyboard, A),Test: Add, edit, save, cancel, delete using only keyboard; no mouse required
+Keyboard,Focus order logical with visible indicators (2.4.3 Focus Order, A; 2.4.7 Focus Visible, AA),Test: Tab through flow (skip link → forms → buttons); focus outline visible (min 3:1 contrast)
+Keyboard,No keyboard traps (2.1.2 No Keyboard Trap, A),Test: Can Tab out of all forms/modals; no stuck focus
+Structure,Meaningful heading hierarchy (1.3.1 Info & Relationships, A),Test: Single H1; H2/H3 describe sections (e.g., "Current Tasks"); NVDA reads headings with H key
+Structure,Landmarks present (1.3.1 Info & Relationships, A),Test: `<main>`, `<nav>` (if exists) define regions; screen readers identify landmarks
+Forms,Labels programmatically associated (1.3.1 Info & Relationships, A),Test: `<label for="id">` matches input `id`; screen readers announce labels with inputs
+Forms,Errors linked via aria-describedby (3.3.1 Error Identification, A),Test: Error messages use `aria-describedby`; screen readers announce errors with inputs
+Dynamic,Status messages announced via live regions (4.1.3 Status Messages, AA),Test: Success/error messages use `role="status"` or `role="alert"`; NVDA announces without focus
+Dynamic,No unexpected focus shifts (2.4.3 Focus Order, A),Test: After save/delete, focus stays on relevant element (e.g., updated task)
+No-JS,All features work with JS disabled (No-JS parity),Test: Disable JS; verify add/edit/delete via full-page requests; PRG pattern works
+Visual,Text contrast meets AA (4.5:1) (1.4.3 Contrast, AA),Test: Use Chrome DevTools; check text (e.g., buttons, labels) against background
+Visual,200% zoom works without horizontal scroll (1.4.4 Resize Text, AA),Test: Zoom to 200% in Chrome; layout reflows, no horizontal scroll needed

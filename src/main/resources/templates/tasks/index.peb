@@ -3,14 +3,14 @@
 {% block content %}
 <h1>Tasks</h1>
 
-{# Error Summary #}
+{# Error Summary (Week 7: Enhanced for inline edit errors) #}
 {% if error %}
 <div class="error-summary" id="error-summary" tabindex="-1" role="alert" aria-live="assertive">
   <h2>There is a problem</h2>
   <ul>
     {% if error == "title" %}
       <li>
-        <a href="#title">
+        <a href="#title{% if editingId %}-{{ editingId }}{% endif %}">
           {% if msg == "too_long" %}Title is too long (max 200 characters){% else %}Title is required{% endif %}
         </a>
       </li>
@@ -18,13 +18,14 @@
   </ul>
 </div>
 <script>
+  // Progressive enhancement: auto-focus error summary for screen readers
   if (document.getElementById('error-summary')) {
     document.getElementById('error-summary').focus();
   }
 </script>
 {% endif %}
 
-{# Add Task Form (Week 6 Basics, Week 7 Optimize Accessibility) #}
+{# Add Task Form (Week 7: Maintained accessibility with ARIA) #}
 <section aria-labelledby="add-heading">
   <h2 id="add-heading">Add a new task</h2>
   <form action="/tasks" method="post"
@@ -52,18 +53,18 @@
   </form>
 </section>
 
-{# Task List (Week 7 Requirements: Conditions Include View/Edit Templates) #}
+{# Task List (Week 7: Conditional view/edit partials) #}
 <section aria-labelledby="list-heading">
   <h2 id="list-heading">Current tasks ({{ tasks | length }})</h2>
   <img src="/static/img/icon.png" width="16" height="16" alt="Task list icon">
   <ul id="task-list" aria-describedby="result-count">
     {% for task in tasks %}
       {% if editingId and editingId == task.id %}
-        {# Editing mode: includes templates in the _edit.peb section #}
-        {% include "tasks/_edit.peb" with {"task": task, "error": errorMessage} %}
+        {# Edit mode: Include edit partial (Week 7 Activity 2) #}
+        {% include "tasks/partials/edit.peb" with {"task": task, "error": errorMessage} %}
       {% else %}
-        {# View mode: includes the _item.peb partial template #}
-        {% include "tasks/_item.peb" with {"task": task} %}
+        {# View mode: Include view partial (Week 7 Activity 2) #}
+        {% include "tasks/partials/view.peb" with {"task": task} %}
       {% endif %}
     {% else %}
       <li>No tasks yet. Add one above!</li>

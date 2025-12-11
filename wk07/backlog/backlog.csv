@@ -1,0 +1,7 @@
+id,title,story_ref,story_type,need,type,severity,inclusion_risk,evidence,notes,candidate_fix
+7,Delete button contrast fails AA (4.2:1),wk07/audit/axe-report.md#issue-2,WCAG violation,Visual clarity,Accessibility,High,"Low vision,Colour-blind","axe DevTools scan; WCAG 1.4.3","Default gray #6c757d on white (4.2:1 < 4.5:1 required)",true
+8,Focus outline too faint (Pico default),wk07/audit/checklist.md#keyboard-2,WCAG violation,Keyboard visibility,Accessibility,Medium,"Keyboard,Motor","Manual test; WCAG 2.4.7","Focus indicator visible but low contrast (2.1:1), hard to track",true
+9,No delete confirmation dialog,wk07/audit/heuristics.md#h3,Heuristic violation,Error prevention,Usability,Medium,"Motor,Cognitive","Nielsen H3 (User Control); pilot notes L18","Accidental clicks delete tasks immediately, no recovery",false
+10,No-JS error messages not announced,wk07/audit/dynamic.md#no-js-errors,WCAG violation,Error awareness,Accessibility,High,"SR,Cognitive","WCAG 4.1.3; no-JS test L5","PRG redirect loses error context, SR users unaware of issues",true
+11,Edit form hints lack detail,wk07/audit/forms.md#hint-text,Usability issue,Clarity,Usability,Low,Cognitive,"Audit notes L12","Hint only says ""Title"" instead of ""Enter task title (1+ characters)""",false
+12,Live region uses wrong politeness,wk07/audit/dynamic.md#live-region,WCAG violation,Timely feedback,Accessibility,Medium,SR,"WCAG 4.1.3; screen reader test L8","Errors use 'polite' instead of 'assertive', may be delayed",false
