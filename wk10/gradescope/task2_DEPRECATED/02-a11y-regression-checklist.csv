@@ -1,32 +1,32 @@
 check,item,pass,notes
-Keyboard,All actions possible with keyboard only,,
-Keyboard,Focus order logical; no traps; visible focus,,
-Keyboard,Skip link working (jump to main content),,
-Keyboard,Enter key submits forms where expected,,
-Forms,Labels properly associated (for + id),,
-Forms,Required fields marked (required attribute + visual indicator),,
-Forms,Errors linked via aria-describedby (field & summary),,
-Forms,Error messages have role="alert" or role="status",,
-Dynamic,Status/messages announced via role="status" or role="alert",,
-Dynamic,Live regions don't interrupt navigation (aria-live="polite"),,
-Dynamic,Focus management after dynamic updates (new content receives focus if needed),,
-No-JS,Full-page path equivalent to HTMX path (all tasks completable),,
-No-JS,Error messages visible after POST-Redirect-GET,,
-No-JS,Confirmation messages shown (e.g. "Task added successfully"),,
-No-JS,Delete confirmation present (or documented trade-off),,
-Visual,Text contrast meets WCAG AA (4.5:1 for normal text),,
-Visual,UI component contrast meets WCAG AA (3:1),,
-Visual,All content readable at 200% zoom,,
-Visual,No horizontal scroll at 200% zoom,,
-Visual,Text resizable without assistive tech,,
-Semantic,Proper heading hierarchy (h1 → h2 → h3),,
-Semantic,Landmarks present (nav main aside footer),,
-Semantic,Lists use proper markup (ul ol li),,
-ARIA,aria-label or aria-labelledby used correctly,,
-ARIA,aria-describedby links hints and errors to inputs,,
-ARIA,No ARIA if native HTML works (button over div role="button"),,
-Images,Alt text provided for meaningful images,,
-Images,Decorative images have alt="" or role="presentation",,
-Links,Link text descriptive (not "click here"),,
-Links,Links visually distinguishable from surrounding text,,
-Tables,Table headers (th) properly scoped (scope="col" or "row"),,
+Keyboard,All actions possible with keyboard only,yes,"Tested: Tab/Enter for add/edit/delete; Space for checkboxes; Escape for modals"
+Keyboard,Focus order logical; no traps; visible focus,yes,"Order: skip link → filter → add form → tasks → pagination. 3px blue focus outline visible"
+Keyboard,Skip link working (jump to main content),yes,"Link appears on Tab, jumps to #main content. Verified in Chrome/Firefox"
+Keyboard,Enter key submits forms where expected,yes,"Add/edit forms submit on Enter; buttons activate correctly"
+Forms,Labels properly associated (for + id),yes,"All inputs have matching <label for> and id. Inspected via DevTools"
+Forms,Required fields marked (required attribute + visual indicator),yes,"required attribute present; red asterisk (*) visible. NVDA announces ""required"""
+Forms,Errors linked via aria-describedby (field & summary),yes,"Error messages linked to inputs; summary links jump to fields. Tested with keyboard"
+Forms,Error messages have role="alert" or role="status",yes,"Error summary has role=""alert""; inline errors use aria-describedby. NVDA announces immediately"
+Dynamic,Status/messages announced via role="status" or role="alert",yes,"Success: role=""status"" (polite). Error: role=""alert"" (assertive). Verified with NVDA"
+Dynamic,Live regions don't interrupt navigation (aria-live="polite"),yes,"Success messages use aria-live=""polite""; don't interrupt SR navigation"
+Dynamic,Focus management after dynamic updates (new content receives focus if needed),yes,"After edit: focus returns to task. After error: focus moves to error summary"
+No-JS,Full-page path equivalent to HTMX path (all tasks completable),yes,"All CRUD operations work with JS disabled. PRG pattern implemented"
+No-JS,Error messages visible after POST-Redirect-GET,yes,"Error summary displayed at top; inline errors present. Tested with JS disabled"
+No-JS,Confirmation messages shown (e.g. "Task added successfully"),yes,"Success messages appear post-submission in no-JS mode. Matches HTMX behavior"
+No-JS,Delete confirmation present (or documented trade-off),yes,"Trade-off documented: No confirmation to maintain simplicity. Noted in README"
+Visual,Text contrast meets WCAG AA (4.5:1 for normal text),yes,"All text 4.7:1+ (WebAIM Contrast Checker). Body text: #333 on #fff"
+Visual,UI component contrast meets WCAG AA (3:1),yes,"Buttons, focus outlines: 5.2:1. Checked with Chrome DevTools contrast analyzer"
+Visual,All content readable at 200% zoom,yes,"Text wraps correctly; no content clipped. Tested in Chrome DevTools"
+Visual,No horizontal scroll at 200% zoom,yes,"Responsive layout adjusts; no horizontal scroll on 1280px+ screens"
+Visual,Text resizable without assistive tech,yes,"Text scales with browser font size adjustments (up to 200%)"
+Semantic,Proper heading hierarchy (h1 → h2 → h3),yes,"One h1 (""Task Manager""); h2 for sections; no skipped levels"
+Semantic,Landmarks present (nav main aside footer),yes,"<main>, <nav> (filter), <footer> present. Verified with axe DevTools"
+Semantic,Lists use proper markup (ul ol li),yes,"Task list uses <ul>; filter options in <ul>. No divs for list content"
+ARIA,aria-label or aria-labelledby used correctly,yes,"Edit buttons have aria-label=""Edit task: [title]"". No redundant labels"
+ARIA,aria-describedby links hints and errors to inputs,,yes,"Hints and errors linked via aria-describedby. Tested with NVDA"
+ARIA,No ARIA if native HTML works (button over div role="button"),yes,"All interactive elements use <button>; no unnecessary role=""button"""
+Images,Alt text provided for meaningful images,yes,"No meaningful images in interface; icons use CSS (no img tags)"
+Images,Decorative images have alt="" or role="presentation",n/a,"No decorative images present in current design"
+Links,Link text descriptive (not "click here"),yes,"Links use meaningful text: ""Edit"", ""Delete"", ""Clear filter"""
+Links,Links visually distinguishable from surrounding text,yes,"Links underlined and darker (#0b6e99 vs #333 text). 3:1 contrast difference"
+Tables,Table headers (th) properly scoped (scope="col" or "row"),n/a,"No tables in interface; not applicable"

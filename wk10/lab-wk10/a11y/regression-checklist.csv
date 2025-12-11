@@ -1,8 +1,9 @@
-check,item,pass,notes
-Keyboard,All actions possible with keyboard only,,
-Keyboard,Focus order logical; no traps; visible focus,,
-Forms,Errors linked via aria-describedby (field & summary),,
-Dynamic,Status/messages announced via role="status",,
-No-JS,Full-page path equivalent to HTMX path,,
-Visual,Contrast AA; 200% zoom ok,,
-
+check_id,check_description,js_mode,result,evidence
+RC-001,"Error summary auto-gains focus on form submission (no-JS)",off,PASS,"Video: evidence/wk10/rc-001-nojs-focus.mp4"
+RC-002,"Screen readers announce validation errors immediately (JS-on)",on,PASS,"NVDA log: evidence/wk10/rc-002-js-aria.log"
+RC-003,"Form fields link to errors via aria-describedby",both,PASS,"Code audit: templates/tasks/_edit_nojs.peb L18"
+RC-004,"Error messages remain visible after page reload (no-JS)",off,PASS,"Screenshot: evidence/wk10/rc-004-nojs-persist.png"
+RC-005,"Keyboard focus not trapped in error container (JS-on)",on,PASS,"Keyboard test: evidence/wk10/rc-005-js-keyboard.txt"
+RC-006,"T1_filter functionality works post-fix",both,PASS,"Test script: scripts/regression/t1-filter-test.sh"
+RC-007,"T3_delete confirmation behaves consistently",both,PASS,"Log: evidence/wk10/rc-007-delete-consistency.log"
+RC-008,"Axe DevTools finds 0 WCAG 3.3.1 violations",both,PASS,"Report: evidence/wk10/rc-008-axe-report.json"

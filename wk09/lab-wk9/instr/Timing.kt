@@ -1,21 +1,36 @@
-package comp2850.instr
-import io.ktor.server.application.*
-import io.ktor.util.*
-import kotlin.system.*
+package utils
 
-val ReqIdKey = AttributeKey<String>("rid")
+import kotlin.system.measureTimeMillis
 
-suspend inline fun <T> ApplicationCall.timed(taskCode: String, js: String, block: () -> T): T {
-    val start = System.currentTimeMillis()
-    return try {
-        val res = block()
-        val ms = System.currentTimeMillis() - start
-        Logger.write(request.cookies["sid"] ?: "anon", attributes.getOrNull(ReqIdKey) ?: "na", taskCode, "success", "ok", ms, response.status()?.value ?: 200, js)
-        res
-    } catch (e: Exception) {
-        val ms = System.currentTimeMillis() - start
-        Logger.write(request.cookies["sid"] ?: "anon", attributes.getOrNull(ReqIdKey) ?: "na", taskCode, "server_error", e::class.simpleName ?: "error", ms, response.status()?.value ?: 500, js)
-        throw e
+/**
+ * Helper to measure task duration and log via Logger
+ * @param sessionId Anonymous session ID
+ * @param taskCode Task identifier (e.g., T3_add)
+ * @param jsMode "js-on" or "js-off"
+ * @param action The task action to execute and time
+ * @return Result of the action
+ */
+inline fun <T> timeAndLogTask(
+    sessionId: String,
+    taskCode: String,
+    jsMode: String,
+    action: () -> T
+): T {
+    var result: T? = null
+    val durationMs = measureTimeMillis {
+        result = action()
     }
-}
 
+    // Assume success if no exception; adjust based on actual logic
+    Logger.logTaskEvent(
+        sessionId = sessionId,
+        taskCode = taskCode,
+        step = "complete",
+        outcome = "success",
+        durationMs = durationMs,
+        httpStatus = 200,
+        jsMode = jsMode
+    )
+
+    return result!!
+}

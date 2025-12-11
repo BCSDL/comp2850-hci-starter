@@ -1,0 +1,5 @@
+task_code,js_mode,n_success,n_total,completion_rate,median_ms,mad_ms,errors_validation,error_rate
+T2_edit,on,2,2,1.00,1322,68,0,0.00
+T2_edit,off,1,1,1.00,3201,150,1,0.25
+T1_filter,on,2,2,1.00,1750,180,0,0.00
+T1_filter,off,1,1,1.00,3100,200,0,0.00
